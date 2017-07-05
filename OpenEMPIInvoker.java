@@ -82,7 +82,7 @@ public class OpenEMPIInvoker {
 		    		+ "</identifierDomain>"
 		    		+ "</personIdentifier>";
 	    }
-	    else if(namespace.equalsIgnoreCase("SSN")){
+	    	    else if(namespace.equals("SSN")){
 	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
 		    		+ "<personIdentifier>"
 		    		+ "<identifier>" + subjectId + "</identifier>"
@@ -93,7 +93,42 @@ public class OpenEMPIInvoker {
 		    		+ "</identifierDomain>"
 		    		+ "</personIdentifier>";
 	    }
-	    else if (namespace.equalsIgnoreCase("VirginiaDLN")){
+	    else if (namespace == "VirginiaDLN"){
+	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
+		    		+ "<personIdentifier>"
+		    		+ "<identifier>" + subjectId + "</identifier>"
+		    		+ "<identifierDomain>"
+		    		+ "<namespaceIdentifier>2.16.840.1.113883.4.3.51</namespaceIdentifier>"
+		    		+ "<universalIdentifier>2.16.840.1.113883.4.3.51</universalIdentifier>"
+		    		+ "<universalIdentifierTypeCode>VirginiaDLN</universalIdentifierTypeCode>"
+		    		+ "</identifierDomain>"
+		    		+ "</personIdentifier>";
+	    }
+	    else if (namespace == "OpenMRS"){
+	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
+		    		+ "<personIdentifier>"
+		    		+ "<identifier>" + subjectId + "</identifier>"
+		    		+ "<identifierDomain>"
+		    		+ "<namespaceIdentifier>35a02490-5c20-11de-8ae4-001d60400e9e</namespaceIdentifier>"
+		    		+ "<universalIdentifier>35a02490-5c20-11de-8ae4-001d60400e9e</universalIdentifier>"
+		    		+ "<universalIdentifierTypeCode>OpenMRS</universalIdentifierTypeCode>"
+		    		+ "</identifierDomain>"
+		    		+ "</personIdentifier>";
+	    	
+	    }
+	    else if (namespace == "IHENA"){
+	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
+		    		+ "<personIdentifier>"
+		    		+ "<identifier>" + subjectId + "</identifier>"
+		    		+ "<identifierDomain>"
+		    		+ "<namespaceIdentifier>IHENA</namespaceIdentifier>"
+		    		+ "<universalIdentifier>1.3.6.1.4.1.21367.2010.1.2.300</universalIdentifier>"
+		    		+ "<universalIdentifierTypeCode>ISO</universalIdentifierTypeCode>"
+		    		+ "</identifierDomain>"
+		    		+ "</personIdentifier>";
+	    	
+	    }
+	    else if (namespace == "IHELOCAL"){
 	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
 		    		+ "<personIdentifier>"
 		    		+ "<identifier>" + subjectId + "</identifier>"
@@ -104,102 +139,70 @@ public class OpenEMPIInvoker {
 		    		+ "</identifierDomain>"
 		    		+ "</personIdentifier>";
 	    }
-	    else if (namespace.equalsIgnoreCase("OpenMRS")){
+	    else if (namespace == "XREF2005"){
 	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
 		    		+ "<personIdentifier>"
 		    		+ "<identifier>" + subjectId + "</identifier>"
 		    		+ "<identifierDomain>"
-		    		+ "<namespaceIdentifier>2.16.840.1.113883.4.1</namespaceIdentifier>"
-		    		+ "<universalIdentifier>2.16.840.1.113883.4.1</universalIdentifier>"
-		    		+ "<universalIdentifierTypeCode>SSN</universalIdentifierTypeCode>"
+		    		+ "<namespaceIdentifier>XREF2005</namespaceIdentifier>"
+		    		+ "<universalIdentifier>1.3.6.1.4.1.21367.2005.1.2</universalIdentifier>"
+		    		+ "<universalIdentifierTypeCode>ISO</universalIdentifierTypeCode>"
 		    		+ "</identifierDomain>"
 		    		+ "</personIdentifier>";
 	    }
-	    else if (namespace.equalsIgnoreCase("IHENA")){
+	    else if (namespace == "HIMSS2005"){
 	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
 		    		+ "<personIdentifier>"
 		    		+ "<identifier>" + subjectId + "</identifier>"
 		    		+ "<identifierDomain>"
-		    		+ "<namespaceIdentifier>2.16.840.1.113883.4.1</namespaceIdentifier>"
-		    		+ "<universalIdentifier>2.16.840.1.113883.4.1</universalIdentifier>"
-		    		+ "<universalIdentifierTypeCode>SSN</universalIdentifierTypeCode>"
+		    		+ "<namespaceIdentifier>HIMSS2005</namespaceIdentifier>"
+		    		+ "<universalIdentifier>1.3.6.1.4.1.21367.2005.1.1</universalIdentifier>"
+		    		+ "<universalIdentifierTypeCode>ISO</universalIdentifierTypeCode>"
+		    		+ "</identifierDomain>"
+		    		+ "</personIdentifier>";
+	    	
+	    }
+	    else if (namespace == "NIST2010"){
+	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
+		    		+ "<personIdentifier>"
+		    		+ "<identifier>" + subjectId + "</identifier>"
+		    		+ "<identifierDomain>"
+		    		+ "<namespaceIdentifier>NIST2010</namespaceIdentifier>"
+		    		+ "<universalIdentifier>2.16.840.1.113883.3.72.5.9.1</universalIdentifier>"
+		    		+ "<universalIdentifierTypeCode>ISO</universalIdentifierTypeCode>"
 		    		+ "</identifierDomain>"
 		    		+ "</personIdentifier>";
 	    }
-	    else if (namespace.equalsIgnoreCase("IHELOCAL")){
+	    else if (namespace == "NIST2010-2"){
 	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
 		    		+ "<personIdentifier>"
 		    		+ "<identifier>" + subjectId + "</identifier>"
 		    		+ "<identifierDomain>"
-		    		+ "<namespaceIdentifier>2.16.840.1.113883.4.1</namespaceIdentifier>"
-		    		+ "<universalIdentifier>2.16.840.1.113883.4.1</universalIdentifier>"
-		    		+ "<universalIdentifierTypeCode>SSN</universalIdentifierTypeCode>"
+		    		+ "<namespaceIdentifier>NIST2010-2</namespaceIdentifier>"
+		    		+ "<universalIdentifier>2.16.840.1.113883.3.72.5.9.2</universalIdentifier>"
+		    		+ "<universalIdentifierTypeCode>NIST2010-2</universalIdentifierTypeCode>"
 		    		+ "</identifierDomain>"
 		    		+ "</personIdentifier>";
 	    }
-	    else if (namespace.equalsIgnoreCase("XREF2005")){
+	    else if (namespace == "NIST2010-3"){
 	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
 		    		+ "<personIdentifier>"
 		    		+ "<identifier>" + subjectId + "</identifier>"
 		    		+ "<identifierDomain>"
 		    		+ "<namespaceIdentifier>2.16.840.1.113883.4.1</namespaceIdentifier>"
-		    		+ "<universalIdentifier>2.16.840.1.113883.4.1</universalIdentifier>"
-		    		+ "<universalIdentifierTypeCode>SSN</universalIdentifierTypeCode>"
+		    		+ "<universalIdentifier>2.16.840.1.113883.3.72.5.9.3</universalIdentifier>"
+		    		+ "<universalIdentifierTypeCode>NIST2010-3</universalIdentifierTypeCode>"
 		    		+ "</identifierDomain>"
 		    		+ "</personIdentifier>";
 	    }
-	    else if (namespace.equalsIgnoreCase("HIMSS2005")){
+	    else if (namespace == "ECID"){
 	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
 		    		+ "<personIdentifier>"
 		    		+ "<identifier>" + subjectId + "</identifier>"
 		    		+ "<identifierDomain>"
-		    		+ "<namespaceIdentifier>2.16.840.1.113883.4.1</namespaceIdentifier>"
-		    		+ "<universalIdentifier>2.16.840.1.113883.4.1</universalIdentifier>"
-		    		+ "<universalIdentifierTypeCode>SSN</universalIdentifierTypeCode>"
-		    		+ "</identifierDomain>"
-		    		+ "</personIdentifier>";
-	    }
-	    else if (namespace.equalsIgnoreCase("NIST2010")){
-	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
-		    		+ "<personIdentifier>"
-		    		+ "<identifier>" + subjectId + "</identifier>"
-		    		+ "<identifierDomain>"
-		    		+ "<namespaceIdentifier>2.16.840.1.113883.4.1</namespaceIdentifier>"
-		    		+ "<universalIdentifier>2.16.840.1.113883.4.1</universalIdentifier>"
-		    		+ "<universalIdentifierTypeCode>SSN</universalIdentifierTypeCode>"
-		    		+ "</identifierDomain>"
-		    		+ "</personIdentifier>";
-	    }
-	    else if (namespace.equalsIgnoreCase("NIST2010-2")){
-	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
-		    		+ "<personIdentifier>"
-		    		+ "<identifier>" + subjectId + "</identifier>"
-		    		+ "<identifierDomain>"
-		    		+ "<namespaceIdentifier>2.16.840.1.113883.4.1</namespaceIdentifier>"
-		    		+ "<universalIdentifier>2.16.840.1.113883.4.1</universalIdentifier>"
-		    		+ "<universalIdentifierTypeCode>SSN</universalIdentifierTypeCode>"
-		    		+ "</identifierDomain>"
-		    		+ "</personIdentifier>";
-	    }
-	    else if (namespace.equalsIgnoreCase("NIST2010-3")){
-	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
-		    		+ "<personIdentifier>"
-		    		+ "<identifier>" + subjectId + "</identifier>"
-		    		+ "<identifierDomain>"
-		    		+ "<namespaceIdentifier>2.16.840.1.113883.4.1</namespaceIdentifier>"
-		    		+ "<universalIdentifier>2.16.840.1.113883.4.1</universalIdentifier>"
-		    		+ "<universalIdentifierTypeCode>SSN</universalIdentifierTypeCode>"
-		    		+ "</identifierDomain>"
-		    		+ "</personIdentifier>";
-	    }
-	    else if (namespace.equalsIgnoreCase("ECID")){
-	    	payload = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"  
-		    		+ "<personIdentifier>"
-		    		+ "<identifier>" + subjectId + "</identifier>"
-		    		+ "<identifierDomain>"
-		    		+ "<namespaceIdentifier>2.16.840.1.113883.4.1</namespaceIdentifier>"
-		    		+ "<universalIdentifier>2.16.840.1.113883.4.1</universalIdentifier>"
-		    		+ "<universalIdentifierTypeCode>SSN</universalIdentifierTypeCode>"
+		    		+ "<namespaceIdentifier>ECID</namespaceIdentifier>"
+		    		+ "<universalIdentifier>ECID</universalIdentifier>"
+		    		+ "<universalIdentifierTypeCode>ECID</universalIdentifierTypeCode>"
 		    		+ "</identifierDomain>"
 		    		+ "</personIdentifier>";
 	    }
