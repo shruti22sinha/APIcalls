@@ -133,9 +133,9 @@ public class OpenEMPIInvoker {
 		    		+ "<personIdentifier>"
 		    		+ "<identifier>" + subjectId + "</identifier>"
 		    		+ "<identifierDomain>"
-		    		+ "<namespaceIdentifier>2.16.840.1.113883.4.1</namespaceIdentifier>"
-		    		+ "<universalIdentifier>2.16.840.1.113883.4.1</universalIdentifier>"
-		    		+ "<universalIdentifierTypeCode>SSN</universalIdentifierTypeCode>"
+		    		+ "<namespaceIdentifier>IHELOCAL</namespaceIdentifier>"
+		    		+ "<universalIdentifier>1.3.6.1.4.1.21367.2010.1.2.310</universalIdentifier>"
+		    		+ "<universalIdentifierTypeCode>IS</universalIdentifierTypeCode>"
 		    		+ "</identifierDomain>"
 		    		+ "</personIdentifier>";
 	    }
